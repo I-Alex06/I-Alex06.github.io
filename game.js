@@ -1,9 +1,21 @@
-var nop;var loc;
+
+import data from './locatii.json' assert {type: 'json'};
+console.log(data);
+
+
+var nop;var loc;var spy;
 window.onload = function(){
     nop = parseInt(sessionStorage.getItem("nop"));
+    spy = Math.round(Math.random()*nop);
+    if(spy==0){
+        spy++;
+    }
     //console.log(nop);
     //console.log(typeof(nop));
-    loc="locatie";
+    //arr=JSON.parse();
+    
+    let i=Math.round(Math.random()*data.length);
+    loc=data[i].toUpperCase();
     
 }
 addEventListener("click",function(){
@@ -15,7 +27,11 @@ addEventListener("click",function(){
     }
     else{
         if(w.innerHTML==""){
-            w.innerHTML=loc;
+            if(parseInt(p.innerHTML)!=spy){
+            w.innerHTML=loc;}
+            else{
+                w.innerHTML="SPY";
+            }
         }
         else{
             w.innerHTML="";

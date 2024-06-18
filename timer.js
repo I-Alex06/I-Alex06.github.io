@@ -1,11 +1,11 @@
 var distance = 1000*60*parseInt(sessionStorage.getItem("nop"));
 var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-document.getElementById("timer1").innerHTML = minutes +" : " + seconds;
+document.getElementById("timer1").innerHTML = minutes +" : " + "00";
 var showtimer=false;
 function timer(){
 // Set the date we're counting down to
-var countDownDate = new Date().getTime() + minutes*60*1000;
+var countDownDate = new Date().getTime() + minutes*60*1000+1000;
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -23,7 +23,12 @@ var x = setInterval(function() {
   // Time calculations for minutes and seconds
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+    if(seconds<10){
+        seconds="0"+seconds;
+    }
+    else{
+        seconds=seconds.toString();
+    }
   // Display the result in the element with id="demo"
   document.getElementById("timer1").innerHTML = minutes +" : " + seconds;
 
@@ -42,5 +47,7 @@ function stop_timer(){
 }
 function start_timer(){
     showtimer=true;
+    document.getElementById("btn").onclick = stop_timer;
+    document.getElementById("btn").innerHTML = "Vote Now";
     timer();
 }

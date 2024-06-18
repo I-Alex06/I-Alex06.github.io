@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
 }
-.nop {
+#id2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,24 +14,18 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.nop input {
-    width:30%;
-    padding: 10px;
+#id2 p {
+    font-size: 20vw;
     margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    text-align: center;
 }
-.nop p {
-    font-size: 6vw;
-    margin: 10px 0;
-}
-.nop button {
+#id2 button {
     padding: 10px 20px;
     border: none;
     background-color: #007bff;
     color: white;
     border-radius: 5px;
+    width: 25vw;
     cursor: pointer;
-    width: 70%;
     font-size: 20px;
 }
