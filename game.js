@@ -1,5 +1,5 @@
 
-import data from './locatii.json' assert { type: "json" };
+import data from './locatii.json' with {type: 'json' };
 console.log(data);
 
 
