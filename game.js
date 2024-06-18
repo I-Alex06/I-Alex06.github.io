@@ -1,7 +1,16 @@
 
 import data from './locatii.json' with {type: 'json' };
 console.log(data);
-
+// data=[
+//     "aeroport",
+//     "toalete",
+//     "restaurant",
+//     "hotel",
+//     "piscina",
+//     "plaja",
+//     "banca",
+//     "magazin"
+//     ];
 
 var nop;var loc;var spy;
 window.onload = function(){
