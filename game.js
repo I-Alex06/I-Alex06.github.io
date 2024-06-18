@@ -15,6 +15,7 @@ window.onload = function(){
     //arr=JSON.parse();
     
     let i=Math.round(Math.random()*data.length);
+    if(i==data.length){i--;}
     loc=data[i].toUpperCase();
     
 }
