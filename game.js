@@ -133,9 +133,36 @@ window.onload = function(){
     
 }
 var notReady=false;
-var ua = navigator.userAgent,
-event = (ua.match(/iPhone/i)) ? "touchstart" : "click";
 addEventListener("click",function(e){
+    let sw=window.innerWidth;
+    let sh=window.innerHeight;
+    let cx=e.clientX;
+    let cy=e.clientY;
+    if(cy<sh/10 ||cy>sh/10*9 || cx<sw/8 ||cx>sw/8*7||notReady){return;}
+    let p=document.getElementById("player");
+    let w=document.getElementById("word");
+    if(parseInt(p.innerHTML)>=nop && w.innerHTML!=""){
+        p.innerHTML="1";
+        window.location.href="timer.html";
+    }
+    else{
+        if(w.innerHTML==""){
+            if(parseInt(p.innerHTML)!=spy){
+            w.innerHTML=loc;}
+            else{
+                w.innerHTML="SPY";
+            }
+        }
+        else{
+            w.innerHTML="";
+            p.innerHTML=(parseInt(p.innerHTML)+1);
+        }
+    }
+    notReady=true;
+    this.setTimeout(function(){notReady=false;},500)
+})
+
+addEventListener('touchstart',function(e){
     let sw=window.innerWidth;
     let sh=window.innerHeight;
     let cx=e.clientX;
