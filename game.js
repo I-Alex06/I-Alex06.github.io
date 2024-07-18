@@ -133,6 +133,8 @@ window.onload = function(){
     
 }
 var notReady=false;
+var ua = navigator.userAgent,
+event = (ua.match(/iPhone/i)) ? "touchstart" : "click";
 addEventListener("click",function(e){
     let sw=window.innerWidth;
     let sh=window.innerHeight;
@@ -159,5 +161,5 @@ addEventListener("click",function(e){
         }
     }
     notReady=true;
-    this.setTimeout(function(){notReady=false;},1000)
+    this.setTimeout(function(){notReady=false;},500)
 })
