@@ -165,8 +165,8 @@ addEventListener("click",function(e){
 addEventListener('touchstart',function(e){
     let sw=window.innerWidth;
     let sh=window.innerHeight;
-    let cx=e.clientX;
-    let cy=e.clientY;
+    let cx=e.touches[0].pageX;
+    let cy=e.touches[0].pageY;
     if(cy<sh/10 ||cy>sh/10*9 || cx<sw/8 ||cx>sw/8*7||notReady){return;}
     let p=document.getElementById("player");
     let w=document.getElementById("word");
