@@ -43,7 +43,7 @@ var x = setInterval(function() {
   // If the count down is finished, write some text
   if (distance <= 0) {
     clearInterval(x);
-    window.location.href="index.html";
+    window.location.href="spy.html";
     return;
     //document.getElementById("timer").innerHTML = "EXPIRED";
   }
@@ -51,7 +51,7 @@ var x = setInterval(function() {
 }
 function stop_timer(){
     showtimer=false;
-    window.location.href="index.html";
+    window.location.href="spy.html";
 }
 function start_timer(){
     showtimer=true;
